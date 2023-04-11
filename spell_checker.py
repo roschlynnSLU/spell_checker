@@ -12,3 +12,5 @@ for word in word_list: #Loop through every word
         print('Delete suggestions: ', corrections)
         corrections = english_words.get_add_corrections(word) #Then get suggestions that can be added by addition of letters
         print('Add suggestions: ', corrections)
+        corrections = english_words.get_add_corrections_without_delete(word)
+        print('Without Delete: ', corrections)

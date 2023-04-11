@@ -57,3 +57,16 @@ class Words:
                 transformed = True
                 break
         return transformed #Return the transformed word
+    
+    def get_add_corrections_without_delete(self, misspelled_word):
+        suggestions = []
+        for w in self.words:
+            # only consider words that are one character longer than misspelled word
+            if len(w) == len(misspelled_word)+1:
+                # try adding one letter at a time from w to misspelled_word and see if we can transform it to w
+                for i in range(len(w)):
+                    correction = misspelled_word[:i] + w[i] + misspelled_word[i:]
+                    if correction == w:
+                        suggestions.append(w)
+                        break
+        return suggestions
