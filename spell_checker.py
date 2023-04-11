@@ -10,5 +10,5 @@ for word in word_list: #Loop through every word
         print('Replace suggestions: ', corrections) #Show the replace suggestions to the user
         corrections = english_words.get_delete_corrections(word) #Then get suggestions that can be shown by deletion
         print('Delete suggestions: ', corrections)
-        corrections = english_words.get_add_corrections(word) #Then get suggestions that can be added by addition of words
+        corrections = english_words.get_add_corrections(word) #Then get suggestions that can be added by addition of letters
         print('Add suggestions: ', corrections)
